@@ -106,7 +106,10 @@
                 <div class="col-sm-12">{{round}}</div>
               </div>
               <div class="row">
-                <div class="col-sm-2" ng-repeat="ppl in vm.getPpls(round)">{{ppl.sn}} {{ppl.name}}</div>
+                <div class="col-sm-2" ng-repeat="ppl in vm.getPpls(round)">
+                  {{ppl.sn}} {{ppl.name}}
+                  <input type="checkbox" ng-checked="ppl.done" ng-model="ppl.done" ng-change="vm.updateDone(ppl)">
+                </div>
               </div>
             </div>
           </div>

@@ -164,6 +164,10 @@ export default function($scope, $meteor, $reactive, $timeout) {
     }
   };
 
+  vm.updateDone = function(ppl) {
+    Ppl.update({_id: ppl._id},  {$set:{done: ppl.done}});
+  };
+
   vm.init = function() {
     vm.resetAddedConfig();
     $scope.$watch('vm.dbConfigs', function() {
